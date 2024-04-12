@@ -6,6 +6,7 @@ import type {
 	ReactNode,
 	VideoHTMLAttributes,
 } from "react";
+
 import { ILazyLoadOptions } from "vanilla-lazyload";
 
 export interface LazyElementProps<T extends HTMLElement>

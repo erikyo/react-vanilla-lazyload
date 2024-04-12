@@ -26,17 +26,17 @@ const LazyWrapper = ({
 	 * Lazy load images
 	 */
 	useEffect(() => {
-		options?.container?.classList?.add("lazy-wrapper");
+		containerRef.current?.classList?.add("lazy-wrapper");
 
-		// these are the mandatory options that will be passed to vanilla-lazyload
-		const vllOptions = {
-			/*container: containerRef.current as HTMLElement,*/
-		};
+		// Set options for vanilla-lazyload async mode
+		window.lazyLoadOptions = { ...options, container: containerRef.current as HTMLDivElement };
 
-		options = Object.assign({}, vllOptions, options);
-		// initializing vanilla-lazyload
+		// Initializing vanilla-lazyload
 		if (typeof window !== "undefined" && "IntersectionObserver" in window) {
-			new LazyLoad(options);
+			const vll = new LazyLoad();
+
+			// Destroying vanilla-lazyload when component unmounts
+			return () => vll.destroy();
 		}
 	}, [options]);
 
