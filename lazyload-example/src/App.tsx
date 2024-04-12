@@ -4,8 +4,8 @@ import { LazyImg, LazyVideo, LazyIframe, LazyEl } from '../../lib'
 function App () {
   return (
         <>
-            <LazyImg src={'https://verlok.github.io/vanilla-lazyload/demos/images/440x560-01.webp'} className="first" alt="random" srcSet="lazy_400.jpg 400w,lazy_800.jpg 800w" data-sizes="100w" title="random" />
-            <LazyImg src={'https://verlok.github.io/vanilla-lazyload/demos/images/440x560-02.webp'} alt="random" />
+            <LazyImg src={'https://verlok.github.io/vanilla-lazyload/demos/images/440x560-01.webp'} className="first" alt="random"title="random" />
+            <LazyImg src={'https://verlok.github.io/vanilla-lazyload/demos/images/440x560-02.webp'} srcSet="https://verlok.github.io/vanilla-lazyload/demos/images/440x560-02.webp 400w,https://verlok.github.io/vanilla-lazyload/demos/images/440x560-02.webp 800w" dataSizes="100w" alt="random" />
             <LazyImg src={'https://verlok.github.io/vanilla-lazyload/demos/images/440x560-03.webp'} alt="random" />
             <LazyImg src={'https://verlok.github.io/vanilla-lazyload/demos/images/440x560-04.webp'} alt="random" />
             <LazyImg src={'https://verlok.github.io/vanilla-lazyload/demos/images/440x560-04.webp'} alt="random" />

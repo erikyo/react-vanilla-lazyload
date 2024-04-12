@@ -19,6 +19,7 @@ export interface LazyElementProps<T extends HTMLElement>
 
 export interface LazyImgProps extends ImgHTMLAttributes<HTMLImageElement> {
   loaded?: MutableRefObject<boolean>;
+  dataSizes?: string
 }
 
 export interface LazyVideoProps extends VideoHTMLAttributes<HTMLVideoElement> {}

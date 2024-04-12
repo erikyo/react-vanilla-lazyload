@@ -20,9 +20,9 @@ const LazyVideo: FC<LazyVideoProps> = ({
 }: LazyVideoProps): JSX.Element => {
   return (
     <video
-      controls
       data-src={src}
       data-poster={poster}
+      controls={!!controls}
       className={lazyClassName(className)}
       {...rest}
     >

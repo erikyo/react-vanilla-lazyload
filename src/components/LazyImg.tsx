@@ -6,12 +6,13 @@ import { lazyClassName } from '../utils'
  * The LazyImg component is used to lazy load images
  * @constructor
  *
- * @param {LazyImgProps} { src, srcSet, alt, className, ...rest } - The props for the component
+ * @param {LazyImgProps} props - The props for the component
  * @returns {JSX.Element}
  */
 const LazyImg: FC<LazyImgProps> = ({
   src,
   srcSet,
+  dataSizes,
   alt,
   className,
   ...rest
@@ -38,6 +39,8 @@ const LazyImg: FC<LazyImgProps> = ({
     <img
       ref={imgRef}
       data-src={src}
+      data-srcset={srcSet}
+      data-sizes={dataSizes}
       alt={alt}
       className={lazyClassName(className)}
       onLoad={handleLoad}

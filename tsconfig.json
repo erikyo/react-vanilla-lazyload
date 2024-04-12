@@ -3,7 +3,7 @@
     "module": "ESNext",
     "target": "ESNext",
     "lib": ["dom", "dom.iterable", "ES2015", "ESNext"],
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "skipLibCheck": true,
     "esModuleInterop": true,
     "strict": true,
