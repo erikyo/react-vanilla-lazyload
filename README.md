@@ -1,8 +1,11 @@
+# Vanilla Lazy Load for React 
 example project
 
 ```js
 import React from 'react';
 import LazyWrapper from './LazyWrapper';
+import LazyImg from './LazyImg';
+
 
 const MyComponent = () => {
   return (
