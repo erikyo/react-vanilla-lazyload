@@ -6,14 +6,14 @@
     "watch": "tsc --watch",
     "build": "tsc",
     "test": "exit 1",
-    "build-docs": "cd lazyload-example && npm run build",
-    "build-docs-preview": "cd lazyload-example && npm run preview"
+    "build-docs": "cd example && npm ci && npm run build",
+    "build-docs-preview": "cd example && npm run preview"
   },
   "author": "",
   "license": "ISC",
   "type": "module",
   "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "types": "./lib/index.d.ts",
   "sideEffects": false,
   "devDependencies": {
     "@types/react": "^18.2.75",
