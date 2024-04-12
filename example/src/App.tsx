@@ -1,4 +1,4 @@
-import {LazyImg, LazyVideo, LazyIframe, LazyEl, LazyWrapper} from 'react-vanilla-lazyload'
+import {LazyWrapper, LazyImg, LazyVideo, LazyIframe, LazyEl} from 'react-vanilla-lazyload'
 
 function App () {
     return (
