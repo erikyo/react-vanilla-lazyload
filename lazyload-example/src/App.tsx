@@ -1,5 +1,5 @@
 import './App.css'
-import { LazyImg, LazyVideo, LazyIframe, LazyEl } from 'react-vanilla-lazyload'
+import { LazyImg, LazyVideo, LazyIframe, LazyEl } from '../../lib'
 
 function App () {
   return (
