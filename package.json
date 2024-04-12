@@ -2,12 +2,19 @@
   "name": "react-vanilla-lazyload",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "test"
+    "watch": "tsc --watch",
+    "build": "tsc",
+    "test": "exit 1",
+    "build-docs": "cd lazyload-example && npm run build",
+    "build-docs-preview": "cd lazyload-example && npm run preview"
   },
   "author": "",
   "license": "ISC",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "sideEffects": false,
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -23,6 +30,7 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.34.1",
     "prettier": "3.2.5",
+    "tslib": "^2.6.2",
     "typescript": "^5.4.5"
   },
   "dependencies": {
