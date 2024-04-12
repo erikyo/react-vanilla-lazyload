@@ -4,9 +4,9 @@ import LazyLoad from "vanilla-lazyload";
 import { LazyWrapperProps } from "../types";
 
 declare global {
-  export interface Window {
-    lazyLoadOptions: ILazyLoadOptions;
-  }
+	export interface Window {
+		lazyLoadOptions: ILazyLoadOptions;
+	}
 }
 
 /**
@@ -17,36 +17,30 @@ declare global {
  * @param options - Options
  */
 const LazyWrapper = ({
-  children,
-  options = { elements_selector: '.lazy' }
+	children,
+	options = { elements_selector: ".lazy" },
 }: LazyWrapperProps) => {
-  const containerRef = createRef<HTMLDivElement>()
+	const containerRef = createRef<HTMLDivElement>();
 
-  /**
-   * Lazy load images
-   */
-  useEffect(() => {
-    // these are the mandatory options that will be passed to vanilla-lazyload
-    const vllOptions = {
-      /* container: containerRef.current as HTMLElement, */
-    }
+	/**
+	 * Lazy load images
+	 */
+	useEffect(() => {
+		options?.container?.classList?.add("lazy-wrapper");
 
-    options = Object.assign({}, vllOptions, options)
+		// these are the mandatory options that will be passed to vanilla-lazyload
+		const vllOptions = {
+			/*container: containerRef.current as HTMLElement,*/
+		};
 
-    // storing the options in a global variable
-    window.lazyLoadOptions = vllOptions
+		options = Object.assign({}, vllOptions, options);
+		// initializing vanilla-lazyload
+		if (typeof window !== "undefined" && "IntersectionObserver" in window) {
+			new LazyLoad(options);
+		}
+	}, [options]);
 
-    // initializing vanilla-lazyload
-    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
-      new LazyLoad(options)
-    }
-  }, [options])
+	return <div ref={containerRef}>{children}</div>;
+};
 
-  return (
-    <div ref={containerRef} className={'lazy-wrapper'}>
-      {children}
-    </div>
-  )
-}
-
-export default LazyWrapper
+export default LazyWrapper;
