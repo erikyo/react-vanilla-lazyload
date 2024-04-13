@@ -25,7 +25,7 @@ export interface LazyElementProps<T extends HTMLElement>
 	 * Single background image
 	 *
 	 * @example ```jsx
-	 * <div class="lazy" data-bg="lazy.jpg"></div>
+	 * <LazyEl data-bg="lazy.jpg"></div>
 	 * ```
 	 */
 	srcBg?: string;
@@ -33,7 +33,7 @@ export interface LazyElementProps<T extends HTMLElement>
 	 * Multiple background image
 	 *
 	 * @example ```jsx
-	 * data-bg-multi="url(lazy-head.jpg), url(lazy-body.jpg), linear-gradient(#fff, #ccc)"
+	 * <LazyEl data-bg-multi="url(lazy-head.jpg), url(lazy-body.jpg), linear-gradient(#fff, #ccc)" />
 	 * ```
 	 */
 	srcBgHDPI?: string;
@@ -41,9 +41,9 @@ export interface LazyElementProps<T extends HTMLElement>
 	 * Multiple backgrounds:
 	 *
 	 * @example ```jsx
-	 * data-bg-multi="url(lazy-head.jpg),
+	 * <LazyEl data-bg-multi="url(lazy-head.jpg),
 	 *     url(lazy-body.jpg),
-	 *     linear-gradient(#fff, #ccc)"
+	 *     linear-gradient(#fff, #ccc)" />
 	 *     ```
 	 */
 	dataBgMulti?: string;
@@ -51,9 +51,9 @@ export interface LazyElementProps<T extends HTMLElement>
 	 * Multiple backgrounds with HiDPI screen support
 	 *
 	 * @example ````jsx
-	 * data-bg-multi="url(lazy-head.jpg),
+	 * <LazyEl data-bg-multi="url(lazy-head.jpg),
 	 *     url(lazy-body.jpg),
-	 *     linear-gradient(#fff, #ccc)"
+	 *     linear-gradient(#fff, #ccc)" />
 	 *     ```
 	 */
 	dataBgMultiHidpi?: string;
@@ -82,6 +82,7 @@ export interface LazyImgProps extends ImgHTMLAttributes<HTMLImageElement> {
 
 /**
  * The `LazyVideo` component
+ *
  * @example ```jsx
  * <LazyVideo src="lazy.mp4" type="video/mp4" alt="video" poster="lazy.jpg" />
  * ```
@@ -90,6 +91,7 @@ export interface LazyVideoProps extends VideoHTMLAttributes<HTMLVideoElement> {}
 
 /**
  * the `LazyIframe` component
+ *
  * @example ```jsx
  * <LazyIframe src="https://verlok.github.io/vanilla-lazyload/" />
  * ```
@@ -99,8 +101,9 @@ export interface LazyIframeProps
 
 /**
  * the `LazyWrapper` component
+ *
  * @example ```jsx
- * <LazyWrapper>
+ * <LazyWrapper options={{ ... }}>
  *   <App />
  * </LazyWrapper>
  * ```
@@ -111,8 +114,9 @@ export interface LazyWrapperProps extends VanillaLazyLoadProps {
 
 /**
  * The props for the `VanillaLazyLoad` component
+ *
  * @example ```jsx
- * <VanillaLazyLoad />
+ * <VanillaLazyLoad options={{ ... }} />
  * ```
  */
 export interface VanillaLazyLoadProps {
