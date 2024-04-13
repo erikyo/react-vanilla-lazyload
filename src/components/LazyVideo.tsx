@@ -14,8 +14,8 @@ const LazyVideo: FC<LazyVideoProps> = ({
 	src,
 	className,
 	controls,
-	itemType,
 	poster,
+	itemType = "video/mp4",
 	...rest
 }: LazyVideoProps): JSX.Element => {
 	return (

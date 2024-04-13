@@ -74,16 +74,19 @@ export default function Demo() {
 				poster={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-01.webp"
 				}
-				controls={false}
+				controls={true}
 			/>
 			<LazyVideo
 				src={
-					"https://verlok.github.io/vanilla-lazyload/demos/videos/1920x1080-0s.mp4"
+					"https://verlok.github.io/vanilla-lazyload/demos/videos/1920x1080-02.mp4"
 				}
 				className={"demo-item"}
 				poster={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-02.webp"
 				}
+				muted
+				playsInline
+				autoPlay
 				controls={false}
 			/>
 			<LazyImg

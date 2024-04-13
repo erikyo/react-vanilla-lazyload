@@ -60,7 +60,7 @@ export default function Header({
 					className={
 						"button bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-lg flex gap-2 items-center "
 					}
-					href={"https://github.com/verlok/vanilla-lazyload"}
+					href={"https://github.com/erikyo/react-vanilla-lazyload"}
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
