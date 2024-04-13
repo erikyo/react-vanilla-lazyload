@@ -1,11 +1,12 @@
 import { lazy, memo, Suspense, useEffect, useState } from "react";
 import Header from "./components/Header.tsx";
 import { pages } from "./constants.ts";
+import { Loader } from "./components/Loader.tsx";
 
 const MemoizedLazyDemo = memo(({ component }: { component: string }) => {
 	const LazyComponent = lazy(() => import(`./demos/${component}.tsx`));
 	return (
-		<Suspense fallback={<div>Loading...</div>}>
+		<Suspense fallback={<Loader />}>
 			<LazyComponent />
 		</Suspense>
 	);
@@ -14,11 +15,14 @@ const MemoizedLazyDemo = memo(({ component }: { component: string }) => {
 function App() {
 	const [index, setIndex] = useState(0); // Initialize index state with 0
 
+	function handleHashChange(index?: number) {
+		const current = index ?? window.location.hash.substring(1); // Remove the '#' character
+		return setIndex(pages.indexOf(String(index ?? current)));
+	}
+
 	useEffect(() => {
-		console.log("Loading Demo", pages[index]);
-		// Update the hash when index changes
-		window.location.hash = pages[index];
-	}, [index, pages]);
+		handleHashChange();
+	}, []);
 
 	return (
 		<>

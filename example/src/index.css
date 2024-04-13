@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.lazy {
+.demo-item {
     display: block;
     object-fit: cover;
     width: 250px;
