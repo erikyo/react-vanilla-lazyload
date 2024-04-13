@@ -1,8 +1,7 @@
 import { LazyImg, VanillaLazyLoad } from "react-vanilla-lazyload";
-import "animate.css/animate.min.css";
 import WallPaper from "../components/WallPaper.tsx";
 
-export default function ImagesLL() {
+export default function Images() {
 	return (
 		<>
 			<WallPaper />
@@ -10,13 +9,14 @@ export default function ImagesLL() {
 				<LazyImg
 					key={index}
 					src={`https://verlok.github.io/vanilla-lazyload/demos/images/440x560-${String(index + 1).padStart(2, "0")}.webp`}
-					className={`demo-item lazyItem-${index} hidden`}
+					className={"demo-item lazyItem-" + index}
 					alt="random"
 					title="random"
-					onLoad={(event) => {
-						(event.target as HTMLImageElement).classList.add(
-							"animate__animated",
-							"animate__fadeInUp",
+					onLoad={() => {
+						console.log(
+							"Loaded",
+							index + 1,
+							["😊", "😎", "🚀", "🌟", "🎉"][Math.floor(Math.random() * 5)],
 						);
 					}}
 				/>

@@ -5,26 +5,17 @@ import {
 	LazyVideo,
 	LazyWrapper,
 } from "react-vanilla-lazyload";
+import WallPaper from "../components/WallPaper.tsx";
 
 export default function Demo() {
 	return (
 		<LazyWrapper>
-			<img
-				src={"https://source.unsplash.com/random/demo"}
-				style={{
-					width: "100%",
-					height: "600px",
-					objectFit: "cover",
-					margin: "0 0 25px",
-				}}
-				title="The image SHOULD be loaded without lazy loading in order to avoid CLS issues"
-				alt="The image SHOULD be loaded without lazy loading in order to avoid CLS issues"
-			/>
+			<WallPaper />
 			<LazyImg
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-01.webp"
 				}
-				className="first"
+				className="demo-item first"
 				alt="random"
 				title="random"
 				onLoad={() => {
@@ -38,41 +29,48 @@ export default function Demo() {
 				srcSet="https://verlok.github.io/vanilla-lazyload/demos/images/440x560-02.webp 400w,https://verlok.github.io/vanilla-lazyload/demos/images/440x560-02.webp 800w"
 				dataSizes="100w"
 				alt="random"
+				className={"demo-item"}
 			/>
 			<LazyImg
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-03.webp"
 				}
 				alt="random"
+				className={"demo-item"}
 			/>
 			<LazyImg
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-04.webp"
 				}
 				alt="random"
+				className={"demo-item"}
 			/>
 			<LazyImg
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-04.webp"
 				}
 				alt="random"
+				className={"demo-item"}
 			/>
 			<LazyImg
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-05.webp"
 				}
 				alt="random"
+				className={"demo-item"}
 			/>
 			<LazyImg
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-06.webp"
 				}
 				alt="random"
+				className={"demo-item"}
 			/>
 			<LazyVideo
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/videos/1920x1080-01.mp4"
 				}
+				className={"demo-item"}
 				poster={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-01.webp"
 				}
@@ -82,59 +80,69 @@ export default function Demo() {
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/videos/1920x1080-0s.mp4"
 				}
+				className={"demo-item"}
 				poster={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-02.webp"
 				}
 				controls={false}
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-07.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-08.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-09.webp"
 				}
 				alt="random"
 			/>
 			<LazyIframe
+				className={"demo-item"}
 				src={"https://verlok.github.io/vanilla-lazyload/demos/iframes/i01.html"}
 				width={500}
 				height={500}
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-10.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-11.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-12.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-13.webp"
 				}
 				alt="random"
 			/>
 			<LazyEl
+				className={"demo-item"}
 				srcBg={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-01.webp"
 				}
@@ -147,222 +155,259 @@ export default function Demo() {
 				}}
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-14.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-15.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-16.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-17.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-18.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-19.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-20.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-21.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-22.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-23.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-24.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-25.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-26.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-27.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-28.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-29.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-30.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-31.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-32.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-33.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-34.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-35.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-36.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-37.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-38.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-39.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-40.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-41.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-42.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-43.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-44.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-45.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-46.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-47.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-48.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-49.webp"
 				}
 				alt="random"
 			/>
 			<LazyImg
+				className={"demo-item"}
 				src={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-50.webp"
 				}
