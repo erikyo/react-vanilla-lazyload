@@ -1,20 +1,14 @@
 import { createRef, useEffect } from "react";
 import type { ILazyLoadOptions } from "vanilla-lazyload";
-import LazyLoad from "vanilla-lazyload";
 import { LazyWrapperProps } from "../types";
-
-declare global {
-	export interface Window {
-		lazyLoadOptions: ILazyLoadOptions;
-	}
-}
+import { initLazyLoad } from "../utils";
 
 /**
- * This is a wrapper around vanilla-lazyload
+ * The LazyWrapper component that initializes vanilla-lazyload with the options provided in the props
  * @constructor
  *
- * @param children - React node
- * @param options - Options
+ * @param children - React node children that contains the lazy elements
+ * @param options - Options for vanilla-lazyload
  */
 const LazyWrapper = ({
 	children,
@@ -23,21 +17,10 @@ const LazyWrapper = ({
 	const containerRef = createRef<HTMLDivElement>();
 
 	/**
-	 * Lazy load images
+	 * Initialize vanilla-lazyload with the options provided in the props
 	 */
 	useEffect(() => {
-		containerRef.current?.classList?.add("lazy-wrapper");
-
-		// Set options for vanilla-lazyload async mode
-		window.lazyLoadOptions = { ...options, container: containerRef.current as HTMLDivElement };
-
-		// Initializing vanilla-lazyload
-		if (typeof window !== "undefined" && "IntersectionObserver" in window) {
-			const vll = new LazyLoad();
-
-			// Destroying vanilla-lazyload when component unmounts
-			return () => vll.destroy();
-		}
+		initLazyLoad(containerRef.current as HTMLDivElement, options);
 	}, [options]);
 
 	return <div ref={containerRef}>{children}</div>;
