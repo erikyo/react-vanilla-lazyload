@@ -1,18 +1,6 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .lazy {
     display: block;
@@ -20,4 +8,15 @@ body {
     width: 250px;
     height: 250px;
     margin: 25px;
+}
+
+.link {
+	margin: 16px;
+	padding: 1rem 2rem;
+	line-height: 2rem;
+	border-radius: 16px;
+	font-size: 1rem;
+	font-weight: 500;
+	background: darkslategrey;
+	color: white;
 }
