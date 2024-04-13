@@ -10,6 +10,7 @@ export default function ImagesLL() {
 				<img
 					className={"demo-item"}
 					key={index}
+					loading={"lazy"}
 					src={`https://verlok.github.io/vanilla-lazyload/demos/images/440x560-${String(index + 1).padStart(2, "0")}.webp`}
 				/>
 			))}

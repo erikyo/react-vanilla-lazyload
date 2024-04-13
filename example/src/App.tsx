@@ -16,8 +16,11 @@ function App() {
 	const [index, setIndex] = useState(0); // Initialize index state with 0
 
 	function handleHashChange(index?: number) {
-		const current = index ?? window.location.hash.substring(1); // Remove the '#' character
-		return setIndex(pages.indexOf(String(index ?? current)));
+		const current =
+			window.location.hash[0] === "#"
+				? window.location.hash.substring(1)
+				: pages[0]; // Remove the '#' character
+		return setIndex(index ?? pages.indexOf(current));
 	}
 
 	useEffect(() => {

@@ -1,15 +1,5 @@
 import { pages } from "../constants.ts";
 
-declare global {
-	interface String {
-		ucfirst(): string;
-	}
-}
-
-String.prototype.ucfirst = function (): string {
-	return this.charAt(0).toUpperCase() + this.slice(1);
-};
-
 /**
  * The Header component for the demo page
  * @param setIndex - The function to set the index of the demo page displayed in the app
@@ -36,8 +26,8 @@ export default function Header({
 				}
 			>
 				React Vanilla LazyLoad
-				<span className={"text-gray-500 md:inline block"}>
-					{pages[index].ucfirst()}
+				<span className={"text-gray-500 md:inline block capitalize"}>
+					{pages[index]}
 				</span>
 			</h1>
 			<div className={"flex md:gap-6 gap-4 items-center w-1/2 justify-end"}>
