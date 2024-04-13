@@ -14,7 +14,9 @@ npm install react-vanilla-lazyload
 ```
 
 ## How To Use
-To use, simply import the `VanillaLazyLoad` component to your app or use `LazyWrapper` to wrap your lazy components.
+To enable the lazy loading in your app import the `VanillaLazyLoad` component or use `LazyWrapper` to wrap your lazy components. 
+The difference between `VanillaLazyLoad` and `LazyWrapper` is that `LazyWrapper` is a wrapper component that wraps all lazy components in your app, use it in case you want to limit the scope of your lazy components.
+**Note that the lazy-loaded elements** should not be in the initial viewport to avoid CLS or FID issues.
 
 ## Script & Wrapper
 - `VanillaLazyLoad` - This is the main script that you need to import and add to your app footer to use it.
@@ -28,6 +30,31 @@ To use, simply import the `VanillaLazyLoad` component to your app or use `LazyWr
 
 
 # Getting Started
+
+Check out the [Examples](https://erikyo.github.io/react-vanilla-lazyload) to get started.
+
+### Using VanillaLazyLoad
+If you want to use the `VanillaLazyLoad` component, you can use it in your app **footer** and after all the lazy components. 
+
+```jsx
+import React from "react";
+import {VanillaLazyLoad, LazyEl} from "react-vanilla-lazyload";
+
+const App = () => {
+	return (
+		<body>
+      {/* The rest of the app */} 
+			<LazyEl srcBg={"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-01.webp"}/>
+			<VanillaLazyLoad />
+		</body>
+	);
+};
+
+export default App;
+```
+
+### Using a wrapper
+If you want to use the `LazyWrapper` component, you can use it in your app footer.
 
 ```jsx
 import React from 'react';
@@ -57,24 +84,7 @@ const MyComponent = () => {
 export default MyComponent;
 ```
 
-
-```jsx
-import React from "react";
-import {VanillaLazyLoad, LazyEl} from "react-vanilla-lazyload";
-
-const App = () => {
-	return (
-		<body>
-      {/* The rest of the app */} 
-			<LazyEl srcBg={"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-01.webp"}/>
-			<VanillaLazyLoad />
-		</body>
-	);
-};
-
-export default App;
-```
-
 # Examples
 
-[Examples](https://erikyo.github.io/react-vanilla-lazyload)
+Please check out the [Examples](https://erikyo.github.io/react-vanilla-lazyload) to see how to use it
+
