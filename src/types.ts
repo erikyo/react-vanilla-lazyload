@@ -2,33 +2,119 @@ import type {
 	HTMLAttributes,
 	IframeHTMLAttributes,
 	ImgHTMLAttributes,
-	MutableRefObject,
 	ReactNode,
 	VideoHTMLAttributes,
 } from "react";
 
 import { ILazyLoadOptions } from "vanilla-lazyload";
 
+/**
+ * The props for the `LazyElement` component
+ */
 export interface LazyElementProps<T extends HTMLElement>
 	extends HTMLAttributes<T> {
+	/**
+	 * The component used to render the element (default: `div`)
+	 */
 	as?: keyof JSX.IntrinsicElements;
+	/**
+	 * The src of the image or video or iframe or any other element that can be lazy loaded
+	 */
 	src?: string;
+	/**
+	 * Single background image
+	 *
+	 * @example ```jsx
+	 * <div class="lazy" data-bg="lazy.jpg"></div>
+	 * ```
+	 */
 	srcBg?: string;
+	/**
+	 * Multiple background image
+	 *
+	 * @example ```jsx
+	 * data-bg-multi="url(lazy-head.jpg), url(lazy-body.jpg), linear-gradient(#fff, #ccc)"
+	 * ```
+	 */
+	srcBgHDPI?: string;
+	/**
+	 * Multiple backgrounds:
+	 *
+	 * @example ```jsx
+	 * data-bg-multi="url(lazy-head.jpg),
+	 *     url(lazy-body.jpg),
+	 *     linear-gradient(#fff, #ccc)"
+	 *     ```
+	 */
+	dataBgMulti?: string;
+	/**
+	 * Multiple backgrounds with HiDPI screen support
+	 *
+	 * @example ````jsx
+	 * data-bg-multi="url(lazy-head.jpg),
+	 *     url(lazy-body.jpg),
+	 *     linear-gradient(#fff, #ccc)"
+	 *     ```
+	 */
+	dataBgMultiHidpi?: string;
+	/**
+	 * The height of the element in pixels
+	 */
 	width?: number;
+	/**
+	 * The Width of the element in pixels
+	 */
 	height?: number;
 }
 
+/**
+ * The props for the `LazyImg` component
+ * Use this to lazy load images and svg elements.
+ * please remember to add the width and height to the element otherwise when it loads it can lead to layout shifting issues
+ *
+ * @example ```jsx
+ * <LazyImg src="lazy.jpg" width={200} height={200} alt="image" />
+ * ```
+ */
 export interface LazyImgProps extends ImgHTMLAttributes<HTMLImageElement> {
-	loaded?: MutableRefObject<boolean>;
 	dataSizes?: string;
 }
 
+/**
+ * The `LazyVideo` component
+ * @example ```jsx
+ * <LazyVideo src="lazy.mp4" type="video/mp4" alt="video" poster="lazy.jpg" />
+ * ```
+ */
 export interface LazyVideoProps extends VideoHTMLAttributes<HTMLVideoElement> {}
 
+/**
+ * the `LazyIframe` component
+ * @example ```jsx
+ * <LazyIframe src="https://verlok.github.io/vanilla-lazyload/" />
+ * ```
+ */
 export interface LazyIframeProps
 	extends IframeHTMLAttributes<HTMLIFrameElement> {}
 
-export interface LazyWrapperProps {
+/**
+ * the `LazyWrapper` component
+ * @example ```jsx
+ * <LazyWrapper>
+ *   <App />
+ * </LazyWrapper>
+ * ```
+ */
+export interface LazyWrapperProps extends VanillaLazyLoadProps {
 	children: ReactNode;
+}
+
+/**
+ * The props for the `VanillaLazyLoad` component
+ * @example ```jsx
+ * <VanillaLazyLoad />
+ * ```
+ */
+export interface VanillaLazyLoadProps {
 	options?: ILazyLoadOptions;
 }
