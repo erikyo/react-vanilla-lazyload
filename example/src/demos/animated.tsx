@@ -2,6 +2,39 @@ import { LazyImg, VanillaLazyLoad } from "react-vanilla-lazyload";
 import "animate.css/animate.min.css";
 import WallPaper from "../components/WallPaper.tsx";
 
+const animations = [
+	"fadeIn",
+	"fadeInDown",
+	"fadeInDownBig",
+	"fadeInLeft",
+	"fadeInLeftBig",
+	"fadeInRight",
+	"fadeInRightBig",
+	"fadeInUp",
+	"fadeInUpBig",
+	"fadeInTopLeft",
+	"fadeInTopRight",
+	"fadeInBottomLeft",
+	"fadeInBottomRight",
+
+	"rotateIn",
+	"rotateInDownLeft",
+	"rotateInDownRight",
+	"rotateInUpLeft",
+	"rotateInUpRight",
+
+	"zoomIn",
+	"zoomInDown",
+	"zoomInLeft",
+	"zoomInRight",
+	"zoomInUp",
+
+	"slideInDown",
+	"slideInLeft",
+	"slideInRight",
+	"slideInUp",
+];
+
 export default function ImagesLL() {
 	return (
 		<>
@@ -16,7 +49,8 @@ export default function ImagesLL() {
 					onLoad={(event) => {
 						(event.target as HTMLImageElement).classList.add(
 							"animate__animated",
-							"animate__fadeInUp",
+							"animate__" +
+								animations[Math.floor(Math.random() * animations.length)],
 						);
 					}}
 				/>
