@@ -1,4 +1,4 @@
-import LazyLoad, { ILazyLoadOptions } from "vanilla-lazyload";
+import LazyLoad, { type ILazyLoadOptions } from "vanilla-lazyload";
 
 declare global {
 	export interface Window {
@@ -39,5 +39,5 @@ export function initLazyLoad(
  * @return string the class name to add to the element
  */
 export function lazyClassName(className?: string): string {
-	return className ? className + " lazy" : "lazy";
+	return className ? `${className} lazy` : "lazy";
 }

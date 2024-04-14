@@ -6,7 +6,7 @@ import type {
 	VideoHTMLAttributes,
 } from "react";
 
-import { ILazyLoadOptions } from "vanilla-lazyload";
+import type { ILazyLoadOptions } from "vanilla-lazyload";
 
 /**
  * The props for the `LazyElement` component
