@@ -21,7 +21,7 @@
 		"test": "vitest",
 		"test:ui": "vitest --ui",
 		"test:watch": "vitest --watch",
-		"lint": "npx @biomejs/biome check --apply src",
+		"lint": "npx @biomejs/biome check --apply src tests",
 		"build-docs": "cd example && npm ci && npm run build",
 		"build-docs-preview": "cd example && npm run preview",
 		"deploy": "npx gh-pages -d ./docs/"
