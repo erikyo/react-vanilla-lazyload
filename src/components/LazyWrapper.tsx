@@ -1,6 +1,5 @@
 import { createRef, useEffect } from "react";
-import type { ILazyLoadOptions } from "vanilla-lazyload";
-import { LazyWrapperProps } from "../types";
+import type { LazyWrapperProps } from "../types";
 import { initLazyLoad } from "../utils";
 
 /**
@@ -21,7 +20,7 @@ const LazyWrapper = ({
 	 */
 	useEffect(() => {
 		initLazyLoad(containerRef.current as HTMLDivElement, options);
-	}, [options]);
+	}, [containerRef, options]);
 
 	return <div ref={containerRef}>{children}</div>;
 };

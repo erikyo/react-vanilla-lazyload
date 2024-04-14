@@ -1,6 +1,6 @@
+import type { FC } from "react";
+import type { LazyVideoProps } from "../types";
 import { lazyClassName } from "../utils";
-import { type LazyVideoProps } from "../types";
-import { type FC } from "react";
 
 /**
  * LazyVideo component used to lazy load videos

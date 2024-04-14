@@ -1,5 +1,5 @@
-import { type FC } from "react";
-import { type LazyImgProps } from "../types";
+import type { FC } from "react";
+import type { LazyImgProps } from "../types";
 import { lazyClassName } from "../utils";
 
 /**
@@ -19,10 +19,10 @@ const LazyImg: FC<LazyImgProps> = ({
 }: LazyImgProps): JSX.Element => {
 	return (
 		<img
+			alt={alt ?? ""}
 			data-src={src}
 			data-srcset={srcSet}
 			data-sizes={dataSizes}
-			alt={alt}
 			className={lazyClassName(className)}
 			{...rest}
 		/>

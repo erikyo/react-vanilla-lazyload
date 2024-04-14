@@ -1,5 +1,5 @@
-import { type FC } from "react";
-import { type LazyIframeProps } from "../types";
+import type { FC } from "react";
+import type { LazyIframeProps } from "../types";
 import { lazyClassName } from "../utils";
 
 /**

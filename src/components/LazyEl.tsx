@@ -1,6 +1,6 @@
-import {type ComponentType, ElementType, type ReactElement} from "react";
-import {lazyClassName} from "../utils";
-import {type LazyElementProps} from "../types";
+import type { ComponentType, ElementType, ReactElement } from "react";
+import type { LazyElementProps } from "../types";
+import { lazyClassName } from "../utils";
 
 /**
  * Lazy Element component used to lazy load elements

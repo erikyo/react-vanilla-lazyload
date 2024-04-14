@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { VanillaLazyLoadProps } from "../types";
+import type { VanillaLazyLoadProps } from "../types";
 import { initLazyLoad } from "../utils";
 
 /**
@@ -10,7 +10,7 @@ import { initLazyLoad } from "../utils";
  */
 const VanillaLazyLoad = ({ options }: VanillaLazyLoadProps): null => {
 	useEffect(() => {
-		initLazyLoad();
+		initLazyLoad(options?.container, options);
 	}, [options]);
 
 	// This component doesn't render anything, it just applies lazy loading to the entire document.body
