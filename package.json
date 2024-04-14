@@ -5,7 +5,8 @@
 	"scripts": {
 		"watch": "tsc --watch",
 		"build": "tsc",
-		"test": "vitest --coverage",
+		"test": "vitest",
+		"lint": "npx @biomejs/biome check --apply src",
 		"build-docs": "cd example && npm ci && npm run build",
 		"build-docs-preview": "cd example && npm run preview",
 		"deploy": "npx gh-pages -d ./docs/"
@@ -25,33 +26,27 @@
 	"author": "",
 	"license": "ISC",
 	"type": "module",
-	"main": "lib/index.js",
+	"main": "lib",
+	"module": "lib",
 	"types": "./lib/index.d.ts",
 	"sideEffects": false,
 	"peerDependencies": {
-		"react": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0",
-		"react-dom": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0"
+		"react": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+		"react-dom": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "1.6.4",
 		"@testing-library/jest-dom": "^6.4.2",
 		"@testing-library/react": "^15.0.2",
 		"@types/react": "^18.2.75",
 		"@types/react-dom": "^18.2.24",
-		"@typescript-eslint/typescript-estree": "^7.6.0",
 		"@vitest/coverage-v8": "^1.5.0",
-		"eslint": "^8.57.0",
-		"eslint-config-standard-with-typescript": "^43.0.1",
-		"eslint-plugin-import": "^2.29.1",
-		"eslint-plugin-n": "^16.6.2",
-		"eslint-plugin-promise": "^6.1.1",
-		"eslint-plugin-react": "^7.34.1",
 		"jsdom": "^24.0.0",
-		"prettier": "3.2.5",
-		"tslib": "^2.6.2",
 		"typescript": "^5.4.5",
 		"vitest": "^1.5.0"
 	},
 	"dependencies": {
+		"@vitejs/plugin-react": "^4.2.1",
 		"vanilla-lazyload": "^19.1.3"
 	}
 }
