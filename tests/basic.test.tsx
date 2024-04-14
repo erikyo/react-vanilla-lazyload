@@ -1,10 +1,8 @@
-import "@testing-library/jest-dom";
+import { render, screen } from "@testing-library/react";
+import { describe, expect, it, test } from "vitest";
+import { LazyImg } from "..";
 
-import { render } from "@testing-library/react";
-import { expect, it, test } from "vitest";
-import { LazyImg } from "../src";
-
-test("LazyImg", () => {
+describe("LazyImg", () => {
 	it("should render the component with the custom props", () => {
 		const { container } = render(
 			<LazyImg
@@ -15,6 +13,7 @@ test("LazyImg", () => {
 				aria-label={"test-aria"}
 			/>,
 		);
+		screen.debug();
 		expect(container).toBeTruthy();
 
 		console.log(container.innerHTML);

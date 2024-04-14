@@ -1,16 +1,8 @@
 {
 	"name": "react-vanilla-lazyload",
 	"version": "0.0.1",
-	"description": "",
-	"scripts": {
-		"watch": "tsc --watch",
-		"build": "tsc",
-		"test": "vitest",
-		"lint": "npx @biomejs/biome check --apply src",
-		"build-docs": "cd example && npm ci && npm run build",
-		"build-docs-preview": "cd example && npm run preview",
-		"deploy": "npx gh-pages -d ./docs/"
-	},
+	"description": "React lazy load component with intersection observer",
+	"author": "Erik <erik@codekraft.it>",
 	"keywords": [
 		"react",
 		"component",
@@ -23,12 +15,19 @@
 		"useInView",
 		"useIntersectionObserver"
 	],
-	"author": "",
+	"scripts": {
+		"watch": "tsc --watch",
+		"build": "tsc",
+		"test": "vitest",
+		"test:ui": "vitest --ui",
+		"test:watch": "vitest --watch",
+		"lint": "npx @biomejs/biome check --apply src",
+		"build-docs": "cd example && npm ci && npm run build",
+		"build-docs-preview": "cd example && npm run preview",
+		"deploy": "npx gh-pages -d ./docs/"
+	},
 	"license": "ISC",
-	"type": "module",
-	"main": "lib",
-	"module": "lib",
-	"types": "./lib/index.d.ts",
+	"main": "lib/index.js",
 	"sideEffects": false,
 	"peerDependencies": {
 		"react": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
@@ -36,17 +35,15 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.6.4",
-		"@testing-library/jest-dom": "^6.4.2",
 		"@testing-library/react": "^15.0.2",
 		"@types/react": "^18.2.75",
 		"@types/react-dom": "^18.2.24",
-		"@vitest/coverage-v8": "^1.5.0",
 		"jsdom": "^24.0.0",
+		"react": "^18.2.0",
 		"typescript": "^5.4.5",
 		"vitest": "^1.5.0"
 	},
 	"dependencies": {
-		"@vitejs/plugin-react": "^4.2.1",
 		"vanilla-lazyload": "^19.1.3"
 	}
 }
