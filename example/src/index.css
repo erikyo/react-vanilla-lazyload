@@ -5,8 +5,9 @@
 .demo-item {
     display: block;
     object-fit: cover;
-    width: 250px;
-    height: 250px;
+	overflow: hidden;
+    width: 220px;
+    height: 280px;
     margin: 25px;
 }
 

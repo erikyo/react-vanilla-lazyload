@@ -51,7 +51,7 @@ export default function Header({
 					}}
 				>
 					{pages.map((page, index) => (
-						<option key={index} value={index}>
+						<option key={page} value={index}>
 							{page}
 						</option>
 					))}
@@ -67,6 +67,7 @@ export default function Header({
 						width="24"
 						height="24"
 						viewBox="0 0 24 24"
+						alt="github"
 					>
 						<path
 							fill={"#fff"}
