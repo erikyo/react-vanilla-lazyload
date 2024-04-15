@@ -2,9 +2,11 @@ import {
 	LazyEl,
 	LazyIframe,
 	LazyImg,
+	LazyModule,
 	LazyVideo,
 	LazyWrapper,
 } from "react-vanilla-lazyload";
+import { Loader } from "../components/Loader.tsx";
 import WallPaper from "../components/WallPaper.tsx";
 
 export default function Demo() {
@@ -122,6 +124,13 @@ export default function Demo() {
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-10.webp"
 				}
 				alt="random"
+			/>
+			<LazyModule
+				className={"demo-item"}
+				src={() => import("../components/Component.tsx")}
+				loader={<Loader />}
+				width={220}
+				height={280}
 			/>
 			<LazyImg
 				className={"demo-item"}
