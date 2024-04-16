@@ -1,8 +1,9 @@
 {
 	"name": "react-vanilla-lazyload",
 	"version": "0.0.1",
-	"description": "React lazy load component with intersection observer",
+	"description": "React lazy loading component using vanilla-lazyload library. Speedy, lightweight and easy to use.",
 	"author": "Erik <erik@codekraft.it>",
+	"license": "ISC",
 	"keywords": [
 		"react",
 		"component",
@@ -17,7 +18,7 @@
 	],
 	"scripts": {
 		"watch": "tsc --watch",
-		"build": "tsc",
+		"build": "tsc --build",
 		"test": "vitest",
 		"test:ui": "vitest --ui",
 		"test:watch": "vitest --watch",
@@ -26,15 +27,18 @@
 		"build-docs-preview": "cd example && npm run preview",
 		"deploy": "npx gh-pages -d ./docs/"
 	},
-	"license": "ISC",
+	"type": "module",
 	"main": "lib/index.js",
+	"module": "lib/index.js",
+	"types": "lib/index.d.ts",
 	"sideEffects": false,
 	"peerDependencies": {
-		"react": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
-		"react-dom": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+		"react": "^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+		"react-dom": "^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.6.4",
+		"@biomejs/biome": "1.7.0",
+		"@testing-library/jest-dom": "^6.4.2",
 		"@testing-library/react": "^15.0.2",
 		"@types/react": "^18.2.75",
 		"@types/react-dom": "^18.2.24",

@@ -1,4 +1,5 @@
 /// <reference types="vitest" />
+/// <reference types="vite/client" />
 import { defineConfig } from "vite";
 
 export default defineConfig({
@@ -11,5 +12,7 @@ export default defineConfig({
 			exclude: ["**/node_modules/**", "**/lib/**"],
 			include: ["**/src/**"],
 		},
+
+		setupFiles: "./tests/setup.ts",
 	},
 });

@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it, test } from "vitest";
+import { describe, expect, it } from "vitest";
 import { LazyImg } from "..";
 
 describe("LazyImg", () => {
@@ -14,8 +14,15 @@ describe("LazyImg", () => {
 			/>,
 		);
 		screen.debug();
-		expect(container).toBeTruthy();
 
-		console.log(container.innerHTML);
+		const image = container.querySelector<HTMLElement>("img");
+
+		expect(image).toBeTruthy();
+		expect(image).toHaveAttribute("alt", "testAlt");
+		expect(image).toHaveAttribute("data-src", "https://example.com");
+		expect(image).toHaveAttribute("data-srcset", "https://example2.com");
+		expect(image).not.toHaveAttribute("data-sizes", null);
+		expect(image).toHaveAttribute("aria-label", "test-aria");
+		expect(image).not.toHaveAttribute("data-aria-label", "test-aria");
 	});
 });

@@ -10,8 +10,14 @@
 		"forceConsistentCasingInFileNames": true,
 		"moduleResolution": "node",
 		"outDir": "lib/",
-		"declaration": true
+		"declaration": true,
+		"types": [
+			"react",
+			"react-dom",
+			"vitest/globals",
+			"@testing-library/jest-dom"
+		]
 	},
-	"include": ["./src/**/*"],
+	"include": ["./src/**/*", "setupTests.ts"],
 	"exclude": ["./lazyload-example", "./node_modules"]
 }
