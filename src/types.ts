@@ -3,6 +3,7 @@ import type {
 	HTMLAttributes,
 	IframeHTMLAttributes,
 	ImgHTMLAttributes,
+	ObjectHTMLAttributes,
 	ReactNode,
 	ScriptHTMLAttributes,
 	VideoHTMLAttributes,
@@ -85,9 +86,9 @@ export interface LazyImgProps extends ImgHTMLAttributes<HTMLImageElement> {
 /**
  * The props for the `LazyScript` component
  */
-export interface LazyScriptProps
-	extends ScriptHTMLAttributes<HTMLScriptElement> {
-	src: () => Promise<{ default: ComponentType<unknown> }>;
+export interface LazyModuleProps
+	extends ObjectHTMLAttributes<HTMLObjectElement> {
+	component: () => Promise<{ default: ComponentType<unknown> }>;
 	loader?: ReactNode;
 }
 

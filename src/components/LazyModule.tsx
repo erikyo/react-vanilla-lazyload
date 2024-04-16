@@ -1,64 +1,72 @@
-import { type LazyExoticComponent, useCallback } from "react";
-import { type ComponentType, Suspense, lazy, useEffect } from "react";
-import type { LazyScriptProps } from "../types";
+import {
+	type ComponentType,
+	type Dispatch,
+	type LazyExoticComponent,
+	type SetStateAction,
+	Suspense,
+	lazy,
+	useEffect,
+	useRef,
+	useState,
+} from "react";
+import type { LazyModuleProps } from "../types";
 import { lazyClassName } from "../utils";
 
-function onClassChange(element: Node, callback: (arg0: Node) => void) {
-	const observer = new MutationObserver((mutations) => {
-		mutations.forEach((mutation) => {
-			if (
-				mutation.type === "attributes" &&
-				mutation.attributeName === "class"
-			) {
-				callback(mutation.target);
-			}
-		});
-	});
-	observer.observe(element, { attributes: true });
-	return observer.disconnect;
+function mutationObserver(targetNode: Node, handler: () => void) {
+	const config = { attributeFilter: ["class"] };
+
+	const callback = (mutationList: MutationRecord[]) => {
+		if (mutationList) handler();
+	};
+
+	const observer = new MutationObserver(callback);
+
+	observer.observe(targetNode, config);
+
+	return () => observer.disconnect();
 }
 
-/**
- * Lazy Component for React using lazy and Suspense
- *
- * @param component
- * @param className
- * @param loader
- * @param props { as: keyof JSX.IntrinsicElements | ComponentType<any>, src: string, srcBg: string, height: number, width: number, className: string }- The props for the component
- * @constructor
- */
 const LazyModule = ({
-	src,
+	component,
 	className,
 	loader,
 	...props
-}: LazyScriptProps): LazyExoticComponent<ComponentType<unknown>> => {
-	let LazyComponent: LazyExoticComponent<ComponentType<unknown>> | null = null;
+}: LazyModuleProps): JSX.Element => {
+	const [LazyComponent, setLazyComponent] = useState(null) as [
+		LazyExoticComponent<ComponentType<HTMLObjectElement>> | null,
+		Dispatch<
+			SetStateAction<LazyExoticComponent<
+				ComponentType<HTMLObjectElement>
+			> | null>
+		>,
+	];
 
-	const Proxy = () => {
-		return (
-			<object
-				type={"module"}
-				className={lazyClassName(className)}
-				data-src={src}
-			>
-				proxy
-			</object>
+	const myRef = useRef<HTMLObjectElement>(null);
+
+	useEffect(() => {
+		if (myRef.current) {
+			return mutationObserver(myRef.current, handleClassChange);
+		}
+	}, [myRef]);
+
+	const handleClassChange = () => {
+		const lazyCb = lazy(component);
+		setLazyComponent(
+			lazyCb as LazyExoticComponent<ComponentType<HTMLObjectElement>>,
 		);
 	};
 
-	useCallback(() => {
-		LazyComponent = lazy(src) as LazyExoticComponent<ComponentType<unknown>>;
-	}, [src]);
-
-	if (!LazyComponent) {
-		return <Proxy onClassChange={onClassChange} />;
+	if (LazyComponent) {
+		return (
+			<Suspense fallback={loader ?? <p>{"loading"}</p>}>
+				<LazyComponent {...props} />
+			</Suspense>
+		);
 	}
-
 	return (
-		<Suspense fallback={loader ?? <p> {"loading"} </p>}>
-			<LazyComponent {...props} />
-		</Suspense>
+		<object type="module" ref={myRef} className={lazyClassName(className)}>
+			proxy
+		</object>
 	);
 };
 
