@@ -5,10 +5,12 @@ import LazyModule from "./components/LazyModule";
 import LazyVideo from "./components/LazyVideo";
 import LazyWrapper from "./components/LazyWrapper";
 import VanillaLazyLoad from "./components/VanillaLazyLoad";
-import { initLazyLoad } from "./utils";
 
+/**
+ * The main export of the library
+ * @constructor
+ */
 export {
-	initLazyLoad,
 	VanillaLazyLoad,
 	LazyWrapper,
 	LazyImg,
@@ -17,5 +19,3 @@ export {
 	LazyEl,
 	LazyModule,
 };
-
-export * from "./types";

@@ -13,13 +13,13 @@ const LazyImg: FC<LazyImgProps> = ({
 	src,
 	srcSet,
 	dataSizes,
-	alt,
-	className,
+	alt = "",
+	className = "lazy",
 	...rest
 }: LazyImgProps): JSX.Element => {
 	return (
 		<img
-			alt={alt ?? ""}
+			alt={alt}
 			data-src={src}
 			data-srcset={srcSet}
 			data-sizes={dataSizes}
