@@ -33,12 +33,8 @@ const LazyModule = ({
 	...props
 }: LazyModuleProps): JSX.Element => {
 	const [LazyComponent, setLazyComponent] = useState(null) as [
-		LazyExoticComponent<ComponentType<HTMLObjectElement>> | null,
-		Dispatch<
-			SetStateAction<LazyExoticComponent<
-				ComponentType<HTMLObjectElement>
-			> | null>
-		>,
+		LazyExoticComponent<ComponentType<unknown>> | null,
+		Dispatch<SetStateAction<LazyExoticComponent<ComponentType<unknown>>>>,
 	];
 
 	const myRef = useRef<HTMLObjectElement>(null);
@@ -47,13 +43,11 @@ const LazyModule = ({
 		if (myRef.current) {
 			return mutationObserver(myRef.current, handleClassChange);
 		}
-	}, [myRef]);
+	}, []);
 
 	const handleClassChange = () => {
 		const lazyCb = lazy(component);
-		setLazyComponent(
-			lazyCb as LazyExoticComponent<ComponentType<HTMLObjectElement>>,
-		);
+		setLazyComponent(lazyCb);
 	};
 
 	if (LazyComponent) {
