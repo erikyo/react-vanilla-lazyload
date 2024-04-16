@@ -8,13 +8,13 @@ export default function Component() {
 		<img
 			src={"https://source.unsplash.com/random/3000x3000"}
 			style={{
-				width: "100%",
-				height: "600px",
+				width: "800px",
+				height: "800px",
 				objectFit: "cover",
 				margin: "0 0 25px",
 			}}
-			height={600}
-			width={2000}
+			height={800}
+			width={800}
 			title="The image is loaded without lazy loading in order to avoid LCP issues"
 			alt="This one is not lazy loaded"
 		/>
