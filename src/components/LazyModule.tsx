@@ -18,15 +18,17 @@ enum Visibility {
  * @param handler - The callback to trigger
  */
 function mutationObserver(targetNode: Node, handler: () => void) {
-	const config = { attributeFilter: ["class"] };
-
+	/**
+	 * The callback that is triggered when the class attribute of the object changes
+	 * @param mutationList - The list of mutations
+	 */
 	const callback = (mutationList: MutationRecord[]) => {
 		if (mutationList) handler();
 	};
 
 	const observer = new MutationObserver(callback);
 
-	observer.observe(targetNode, config);
+	observer.observe(targetNode, { attributeFilter: ["class"] });
 
 	return () => observer.disconnect();
 }

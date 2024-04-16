@@ -1,5 +1,5 @@
-import { VanillaLazyLoad } from "react-vanilla-lazyload";
 import "animate.css/animate.min.css";
+import { VanillaLazyLoad } from "react-vanilla-lazyload";
 import WallPaper from "../components/WallPaper.tsx";
 
 export default function ImagesLL() {
@@ -11,7 +11,10 @@ export default function ImagesLL() {
 					className={"demo-item"}
 					key={index}
 					loading={"lazy"}
-					src={`https://verlok.github.io/vanilla-lazyload/demos/images/440x560-${String(index + 1).padStart(2, "0")}.webp`}
+					alt={""}
+					src={`https://verlok.github.io/vanilla-lazyload/demos/images/440x560-${String(
+						index + 1,
+					).padStart(2, "0")}.webp`}
 				/>
 			))}
 			<VanillaLazyLoad />
