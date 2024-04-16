@@ -127,10 +127,8 @@ export default function Demo() {
 			/>
 			<LazyModule
 				className={"demo-item"}
-				src={() => import("../components/Component.tsx")}
+				component={() => import("../components/Component.tsx")}
 				loader={<Loader />}
-				width={220}
-				height={280}
 			/>
 			<LazyImg
 				className={"demo-item"}
