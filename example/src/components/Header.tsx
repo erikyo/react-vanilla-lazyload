@@ -67,7 +67,8 @@ export default function Header({
 						width="24"
 						height="24"
 						viewBox="0 0 24 24"
-						alt="github"
+						role="img"
+						aria-label={"github"}
 					>
 						<path
 							fill={"#fff"}

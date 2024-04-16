@@ -8,8 +8,10 @@ export default function Images() {
 			{[...Array(50).keys()].map((index) => (
 				<LazyImg
 					key={index}
-					src={`https://verlok.github.io/vanilla-lazyload/demos/images/440x560-${String(index + 1).padStart(2, "0")}.webp`}
-					className={"demo-item lazyItem-" + index}
+					src={`https://verlok.github.io/vanilla-lazyload/demos/images/440x560-${String(
+						index + 1,
+					).padStart(2, "0")}.webp`}
+					className={`demo-item lazyItem-${index}`}
 					alt="random"
 					title="random"
 					onLoad={() => {
