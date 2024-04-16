@@ -13,8 +13,10 @@ export default function WallPaper() {
 				objectFit: "cover",
 				margin: "0 0 25px",
 			}}
-			title="The image SHOULD be loaded without lazy loading in order to avoid CLS issues"
-			alt="The image SHOULD be loaded without lazy loading in order to avoid CLS issues"
+			height={600}
+			width={2000}
+			title="The image is loaded without lazy loading in order to avoid LCP issues"
+			alt="This one is not lazy loaded"
 		/>
 	);
 }
