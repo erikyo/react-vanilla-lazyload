@@ -20,53 +20,62 @@ export interface LazyElementProps<T extends HTMLElement>
 	 */
 	as?: keyof JSX.IntrinsicElements;
 	/**
+	 * Element type
+	 * Use this if you want to use another element type like type="module" or type="application/javascript"
+	 */
+	type?: string;
+	/**
 	 * The src of the image or video or iframe or any other element that can be lazy loaded
 	 */
 	src?: string;
 	/**
+	 * The height of the element in pixels. Lazyloaded elements width and height have to be defined to avoid page content shifting
+	 */
+	width?: number;
+	/**
+	 * The Width of the element in pixels. Lazyloaded elements width and height have to be defined to avoid page content shifting
+	 */
+	height?: number;
+	/**
 	 * Single background image
 	 *
 	 * @example ```jsx
-	 * <LazyEl data-bg="lazy.jpg"></div>
+	 * <LazyEl bg="lazy.jpg"></div>
 	 * ```
 	 */
-	srcBg?: string;
+	bg?: string;
 	/**
-	 * Multiple background image
+	 * Single background image HiDPI screen support
+	 * Must be defined with `srcBg`
 	 *
 	 * @example ```jsx
-	 * <LazyEl data-bg-multi="url(lazy-head.jpg), url(lazy-body.jpg), linear-gradient(#fff, #ccc)" />
+	 * <LazyEl bg="lazy.jpg" bgHidpi="lazy@x2.jpg"></div>
 	 * ```
 	 */
-	srcBgHDPI?: string;
+	bgHidpi?: string;
 	/**
 	 * Multiple backgrounds:
 	 *
 	 * @example ```jsx
-	 * <LazyEl data-bg-multi="url(lazy-head.jpg),
+	 * <LazyEl bgMulti="url(lazy-head.jpg),
 	 *     url(lazy-body.jpg),
 	 *     linear-gradient(#fff, #ccc)" />
 	 *     ```
 	 */
-	dataBgMulti?: string;
+	bgMulti?: string;
 	/**
 	 * Multiple backgrounds with HiDPI screen support
 	 *
 	 * @example ````jsx
-	 * <LazyEl data-bg-multi="url(lazy-head.jpg),
+	 * <LazyEl bgMulti="url(lazy-head.jpg),
 	 *     url(lazy-body.jpg),
+	 *     linear-gradient(#fff, #ccc)"
+	 *   bgMultiHidpi=="url(lazy-head@2x.jpg),
+	 *     url(lazy-body@2x.jpg),
 	 *     linear-gradient(#fff, #ccc)" />
-	 *     ```
+	 * ```
 	 */
-	dataBgMultiHidpi?: string;
-	/**
-	 * The height of the element in pixels
-	 */
-	width?: number;
-	/**
-	 * The Width of the element in pixels
-	 */
-	height?: number;
+	bgMultiHidpi?: string;
 }
 
 /**
@@ -87,7 +96,7 @@ export interface LazyImgProps extends ImgHTMLAttributes<HTMLImageElement> {
  */
 export interface LazyModuleProps
 	extends ObjectHTMLAttributes<HTMLObjectElement> {
-	component: () => Promise<{ default: ComponentType<unknown> }>;
+	component: Promise<{ default: ComponentType<unknown> }>;
 	loader?: JSX.Element;
 }
 
