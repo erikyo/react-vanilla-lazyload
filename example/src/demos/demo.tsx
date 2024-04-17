@@ -2,11 +2,9 @@ import {
 	LazyEl,
 	LazyIframe,
 	LazyImg,
-	LazyModule,
 	LazyVideo,
 	LazyWrapper,
 } from "react-vanilla-lazyload";
-import { Loader } from "../components/Loader.tsx";
 import WallPaper from "../components/WallPaper.tsx";
 
 export default function Demo() {
@@ -151,10 +149,11 @@ export default function Demo() {
 				width={220}
 				height={280}
 			/>
-			<LazyModule
-				className={"demo-item"}
-				component={() => import("../components/Component.tsx")}
-				loader={<Loader />}
+			<LazyEl
+				src={"https://cdn.skypack.dev/canvas-confetti"}
+				as={"script"}
+				type={"module"}
+				onLoad={script}
 			/>
 			<LazyImg
 				className={"demo-item"}
@@ -185,7 +184,7 @@ export default function Demo() {
 			/>
 			<LazyEl
 				className={"demo-item"}
-				srcBg={
+				bg={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-01.webp"
 				}
 				title={"asd"}

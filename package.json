@@ -19,7 +19,7 @@
 	"scripts": {
 		"watch": "tsc --watch",
 		"build": "tsc --build",
-		"test": "vitest",
+		"test": "vitest --coverage",
 		"test:ui": "vitest --ui",
 		"test:watch": "vitest --watch",
 		"lint": "npx @biomejs/biome check --apply src tests",
@@ -42,6 +42,7 @@
 		"@testing-library/react": "^15.0.2",
 		"@types/react": "^18.2.75",
 		"@types/react-dom": "^18.2.24",
+		"@vitest/coverage-v8": "^1.5.0",
 		"jsdom": "^24.0.0",
 		"react": "^18.2.0",
 		"typescript": "^5.4.5",
