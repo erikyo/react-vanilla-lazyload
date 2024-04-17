@@ -1,4 +1,8 @@
 # Vanilla Lazy Load for React
+[![](https://img.shields.io/npm/v/react-vanilla-lazyload.svg?label=npm%20version)](https://www.npmjs.com/package/react-vanilla-lazyload)
+[![](https://img.shields.io/npm/l/react-vanilla-lazyload)](https://github.com/erikyo/react-vanilla-lazyload?tab=GPL-3.0-1-ov-file#readme)
+[![](https://github.com/erikyo/react-vanilla-lazyload/actions/workflows/node.js.yml/badge.svg)](https://github.com/erikyo/react-vanilla-lazyload/actions/workflows/node.js.yml)
+[![codecov](https://codecov.io/gh/erikyo/react-vanilla-lazyload/graph/badge.svg?token=K0UA5J7243)](https://codecov.io/gh/erikyo/react-vanilla-lazyload)
 
 Welcome to the React Vanilla Lazyload repo!
 Yes, the name is a bit of a head-scratcher 😅.
