@@ -12,9 +12,8 @@ import { lazyClassName } from "../utils";
 
 const LazyVideo: FC<LazyVideoProps> = ({
 	src,
-	className,
-	controls,
 	poster,
+	className = "lazy",
 	itemType = "video/mp4",
 	...rest
 }: LazyVideoProps): JSX.Element => {
@@ -22,7 +21,6 @@ const LazyVideo: FC<LazyVideoProps> = ({
 		<video
 			data-src={src}
 			data-poster={poster}
-			controls={!!controls}
 			className={lazyClassName(className)}
 			{...rest}
 		>

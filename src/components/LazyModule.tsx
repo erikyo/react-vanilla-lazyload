@@ -52,7 +52,7 @@ function Loader(): JSX.Element {
  */
 const LazyModule = ({
 	component,
-	className,
+	className = "lazy",
 	loader,
 	...props
 }: LazyModuleProps): JSX.Element => {
@@ -77,7 +77,7 @@ const LazyModule = ({
 	 * Whenever the element is "visible" we can lazily load the component
 	 */
 	if (visible === Visibility.visible) {
-		const LazyComponent = lazy(component);
+		const LazyComponent = lazy(() => component);
 		return (
 			<Suspense fallback={loader ?? <Loader />}>
 				<LazyComponent {...props} />
