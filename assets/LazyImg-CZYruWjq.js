@@ -1,1 +1,0 @@
-import{j as e}from"./index-B3qZbzGH.js";import{l as c}from"./WallPaper-lK1pvf8R.js";const i=({src:a,srcSet:s,dataSizes:t,alt:m,className:r,...o})=>e.jsx("img",{alt:m??"","data-src":a,"data-srcset":s,"data-sizes":t,className:c(r),...o}),p=i;export{p as L};

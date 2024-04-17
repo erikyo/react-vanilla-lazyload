@@ -1,1 +1,0 @@
-import{j as t}from"./index-B3qZbzGH.js";function e(){return t.jsx("img",{src:"https://source.unsplash.com/random/3000x3000",style:{width:"100%",height:"600px",objectFit:"cover",margin:"0 0 25px"},height:600,width:2e3,title:"The image is loaded without lazy loading in order to avoid LCP issues",alt:"This one is not lazy loaded"})}export{e as default};

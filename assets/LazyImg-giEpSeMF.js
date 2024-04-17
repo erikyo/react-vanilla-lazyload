@@ -1,0 +1,1 @@
+import{j as e}from"./index-CLrTMM50.js";import{l}from"./WallPaper-Bt-egZgg.js";const c=({src:a,srcSet:s,dataSizes:t,alt:m="",className:r="lazy",...o})=>e.jsx("img",{alt:m,"data-src":a,"data-srcset":s,"data-sizes":t,className:l(r),...o}),n=c;export{n as L};
