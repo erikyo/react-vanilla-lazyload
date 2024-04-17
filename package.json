@@ -1,8 +1,9 @@
 {
 	"name": "react-vanilla-lazyload",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "React lazy loading component using vanilla-lazyload library. Speedy, lightweight and easy to use.",
 	"author": "Erik <erik@codekraft.it>",
+	"website": "https://codekraft.it",
 	"license": "ISC",
 	"keywords": [
 		"react",
