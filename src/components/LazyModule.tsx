@@ -1,6 +1,8 @@
 import { Suspense, lazy, useEffect, useRef, useState } from "react";
 import type { LazyModuleProps } from "../types";
 import { lazyClassName } from "../utils";
+import { Loader } from "./Loader";
+import { mutationObserver } from "./MutationObserver";
 
 /**
  * The enum for the visibility state of an element
@@ -8,37 +10,6 @@ import { lazyClassName } from "../utils";
 enum Visibility {
 	hidden = "hidden",
 	visible = "visible",
-}
-
-/**
- * The function to observe changes in the class attribute of an element and trigger a callback
- * In the callback we can replace the element with the lazy-loaded component
- *
- * @param targetNode - The element to observe
- * @param handler - The callback to trigger
- */
-function mutationObserver(targetNode: Node, handler: () => void) {
-	/**
-	 * The callback that is triggered when the class attribute of the object changes
-	 * @param mutationList - The list of mutations
-	 */
-	const callback = (mutationList: MutationRecord[]) => {
-		if (mutationList) handler();
-	};
-
-	const observer = new MutationObserver(callback);
-
-	observer.observe(targetNode, { attributeFilter: ["class"] });
-
-	return () => observer.disconnect();
-}
-
-/**
- * The simple Loader component
- * @constructor
- */
-function Loader(): JSX.Element {
-	return <p>{"loading"}</p>;
 }
 
 /**
