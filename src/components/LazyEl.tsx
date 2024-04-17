@@ -11,26 +11,34 @@ import { lazyClassName } from "../utils";
 const LazyEl = <T extends HTMLElement>({
 	as,
 	src,
-	srcBg,
+	bg,
+	bgHidpi,
+	bgMulti,
+	bgMultiHidpi,
 	height,
 	width,
-	className,
+	type,
+	className = "lazy",
 	...rest
 }: LazyElementProps<T>): ReactElement<T> => {
 	const Element = as || ("div" as keyof JSX.IntrinsicElements | ElementType);
-	if (srcBg) {
+	if (bg) {
 		// background image case
 		let style = rest.style || {};
 		// remove the background image if it is already set
-		style = { ...style, backgroundImage: `url(${srcBg})` };
+		style = { ...style, backgroundImage: `url(${bg})` };
 
 		return (
 			<Element
 				width={width}
 				height={height}
 				style={style}
+				data-src={src}
+				data-bg={bg}
+				data-bg-hidpi={bgHidpi}
+				data-bg-multi={bgMulti}
+				data-bg-multi-hidpi={bgMultiHidpi}
 				className={lazyClassName(className)}
-				data-src={srcBg}
 				{...rest}
 			/>
 		);
@@ -42,6 +50,7 @@ const LazyEl = <T extends HTMLElement>({
 			height={height}
 			className={lazyClassName(className)}
 			data-src={src}
+			type={type}
 			{...rest}
 		/>
 	);

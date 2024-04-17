@@ -11,7 +11,7 @@ import { lazyClassName } from "../utils";
  */
 const LazyIframe: FC<LazyIframeProps> = ({
 	src,
-	className,
+	className = "lazy",
 	...rest
 }: LazyIframeProps): JSX.Element => {
 	return (

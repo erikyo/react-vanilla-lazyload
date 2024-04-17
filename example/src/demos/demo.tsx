@@ -153,7 +153,7 @@ export default function Demo() {
 			/>
 			<LazyModule
 				className={"demo-item"}
-				component={() => import("../components/Component.tsx")}
+				component={import("../components/Component.tsx")}
 				loader={<Loader />}
 			/>
 			<LazyImg
@@ -185,7 +185,7 @@ export default function Demo() {
 			/>
 			<LazyEl
 				className={"demo-item"}
-				srcBg={
+				bg={
 					"https://verlok.github.io/vanilla-lazyload/demos/images/440x560-01.webp"
 				}
 				title={"asd"}

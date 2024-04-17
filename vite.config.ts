@@ -10,7 +10,8 @@ export default defineConfig({
 		coverage: {
 			reporter: ["text", "json", "html"],
 			exclude: ["**/node_modules/**", "**/lib/**"],
-			include: ["**/src/**"],
+			include: ["src/**"],
+			extension: ["ts", "tsx"],
 		},
 
 		setupFiles: "./tests/setup.ts",
