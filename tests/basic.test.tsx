@@ -13,7 +13,6 @@ describe("LazyImg", () => {
 				aria-label={"test-aria"}
 			/>,
 		);
-		screen.debug();
 
 		const image = container.querySelector<HTMLElement>("img");
 
@@ -34,7 +33,6 @@ describe("LazyImg", () => {
 				aria-label={"test-aria"}
 			/>,
 		);
-		screen.debug();
 
 		const video = container.querySelector<HTMLElement>("video");
 
@@ -50,7 +48,6 @@ describe("LazyImg", () => {
 		const { container } = render(
 			<LazyIframe src={"https://example.html"} className={"iframe"} />,
 		);
-		screen.debug();
 
 		const iframe = container.querySelector<HTMLElement>("iframe");
 
@@ -71,7 +68,6 @@ describe("LazyImg", () => {
 				type={"application/javascript"}
 			/>,
 		);
-		screen.debug();
 
 		const script = container.querySelector<HTMLElement>("script");
 
@@ -101,7 +97,6 @@ describe("LazyImg", () => {
 				height={100}
 			/>,
 		);
-		screen.debug();
 
 		const a = container.querySelector<HTMLElement>("a");
 

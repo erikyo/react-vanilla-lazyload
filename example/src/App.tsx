@@ -34,7 +34,7 @@ function App() {
 
 	useEffect(() => {
 		handleHashChange();
-	}, []);
+	}, [handleHashChange]);
 
 	return (
 		<>
