@@ -126,7 +126,7 @@ const MyComponent = () => {
       {/** Video */}
       <LazyVideo src={"https://github.com/erikyo/react-vanilla-lazyload/demos/videos/1920x1080-01.mp4"} poster={"https://github.com/erikyo/react-vanilla-lazyload/demos/images/440x560-01.webp"}/>
       {/** HTML Element */}
-      <LazyEl srcBg={"https://github.com/erikyo/react-vanilla-lazyload/demos/images/440x560-01.webp"}/>
+      <LazyEl bg={"https://github.com/erikyo/react-vanilla-lazyload/demos/images/440x560-01.webp"}/>
       {/** React Component */}
       <LazyModule component={import('src/components/MyComponent.tsx')} loader={<Loading/>}/>
     </LazyWrapper>
@@ -146,9 +146,10 @@ Those components are designed as a drop-in replacement for the vanilla `img`, `v
 LazyEl is used to lazy load any element, has a set of props that can be used to customize the lazy load (i.e. srcBg srcBgHDPI, dataBgMulti, dataBgMultiHidpi) used for backgrounds.
 It is typed as html element.
 
-- `srcBg` - The source of the background
-- `dataBgMulti` - The source of the background for multi resolution
-- `dataBgMultiHidpi` - The source of the background for multi resolution and hidpi
+- `bg` - The source of the background
+- `bgHidpi` - The source of the hidpi background
+- `bgMulti` - The source of the background for multi resolution
+- `bgMultiHidpi` - The source of the background for multi resolution and hidpi
 
 ```jsx
 <LazyEl srcBg={"https://github.com/erikyo/react-vanilla-lazyload/demos/images/440x560-01.webp"}/>
