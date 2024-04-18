@@ -8,8 +8,7 @@ Welcome to the React Vanilla Lazyload repo!
 Yes, the name is a bit of a head-scratcher 😅.
 But fear not, despite the contradiction, the story behind this oddly fitting name: we're using a fantastic script called [Vanilla LazyLoad](https://github.com/verlok/vanilla-lazyload) to lazily load our images in React.
 
-So, even though React isn't exactly vanilla, this little gem of a module does its job beautifully, and we've decided to embrace the irony.
-Get ready to turbocharge your React apps!... with React "Vanilla" LazyLoading.
+So, even though React isn't exactly vanilla, this little module does its job beautifully... Get ready to turbocharge your React apps!... with React "Vanilla" LazyLoading.
 
 ## Installation
 
@@ -126,7 +125,7 @@ const MyComponent = () => {
       {/** Image */}
       <LazyImg src={"https://github.com/erikyo/react-vanilla-lazyload/demos/images/440x560-01.webp"} width={440} height={560}/>
       {/** Iframe */}
-      <LazyIframe src={"https://github.com/erikyo/react-vanilla-lazyload/demos/iframes/i01.html"}/>
+      <LazyIframe src={"https://github.com/erikyo/react-vanilla-lazyload/demos/iframes/i01.html"} title={"iframe"} />
       {/** Video */}
       <LazyVideo src={"https://github.com/erikyo/react-vanilla-lazyload/demos/videos/1920x1080-01.mp4"} poster={"https://github.com/erikyo/react-vanilla-lazyload/demos/images/440x560-01.webp"}/>
       {/** HTML Element */}
@@ -172,10 +171,11 @@ LazyModule is used to lazy load React Components.
 
 # Examples
 
-| Example     | Code                                                                                                              | Demo                                                                 |
-|-------------|-------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
-| demo        | [demo.tsx](https://github.com/erikyo/react-vanilla-lazyload/blob/master/example/src/demos/demo.tsx)               | [demo](https://react-vanilla-lazyload-demo.vercel.app//)             |
-| animated    | [animated.tsx](https://github.com/erikyo/react-vanilla-lazyload/blob/master/example/src/demos/animated.tsx)       | [demo](https://react-vanilla-lazyload-demo.vercel.app//#animated)    |
-| images      | [images.tsx](https://github.com/erikyo/react-vanilla-lazyload/blob/master/example/src/demos/images.tsx)           | [demo](https://react-vanilla-lazyload-demo.vercel.app//#images)      |
-| no-lazyload | [no-lazyload.tsx](https://github.com/erikyo/react-vanilla-lazyload/blob/master/example/src/demos/no-lazyload.tsx) | [demo](https://react-vanilla-lazyload-demo.vercel.app//#no-lazyload) |
-| native      | [native.tsx](https://github.com/erikyo/react-vanilla-lazyload/blob/master/example/src/demos/native.tsx)           | [demo](https://react-vanilla-lazyload-demo.vercel.app//#native)      |
+| Example         | Code                                                                                                                  | Demo                                                                    |
+|-----------------|-----------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
+| demo            | [demo.tsx](https://github.com/erikyo/react-vanilla-lazyload-demo/blob/master/src/app/demos/demo.tsx)                  | [demo](https://react-vanilla-lazyload-demo.vercel.app//)                |
+| animated        | [animated.tsx](https://github.com/erikyo/react-vanilla-lazyload-demo/blob/master/src/app/demos/animated.tsx)          | [demo](https://react-vanilla-lazyload-demo.vercel.app//#animated)       |
+| images          | [images.tsx](https://github.com/erikyo/react-vanilla-lazyload-demo/blob/master/src/app/demos/images.tsx)              | [demo](https://react-vanilla-lazyload-demo.vercel.app//#images)         |
+| infinite scroll | [no-lazyload.tsx](https://github.com/erikyo/react-vanilla-lazyload-demo/blob/master/src/app/demos/infiniteScroll.tsx) | [demo](https://react-vanilla-lazyload-demo.vercel.app//#infiniteScroll) |
+| no-lazyload     | [no-lazyload.tsx](https://github.com/erikyo/react-vanilla-lazyload-demo/blob/master/src/app/demos/no-lazyload.tsx)    | [demo](https://react-vanilla-lazyload-demo.vercel.app//#no-lazyload)    |
+| native          | [native.tsx](https://github.com/erikyo/react-vanilla-lazyload-demo/blob/master/src/app/demos/native.tsx)              | [demo](https://react-vanilla-lazyload-demo.vercel.app//#native)         |

@@ -2,8 +2,15 @@
 	"name": "react-vanilla-lazyload",
 	"version": "1.0.1",
 	"description": "React lazy loading component using vanilla-lazyload library. Speedy, lightweight and easy to use.",
-	"author": "Erik <erik@codekraft.it>",
-	"website": "https://codekraft.it",
+	"author": "Erik Golinelli <https://github.com/erikyo>",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/erikyo/react-vanilla-lazyload.git"
+	},
+	"bugs": {
+		"url": "https://github.com/erikyo/react-vanilla-lazyload/issues"
+	},
+	"homepage": "https://react-vanilla-lazyload-demo.vercel.app/",
 	"license": "ISC",
 	"keywords": [
 		"react",
