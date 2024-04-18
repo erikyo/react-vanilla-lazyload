@@ -1,8 +1,12 @@
-import LazyLoad, { type ILazyLoadOptions } from "vanilla-lazyload";
+import LazyLoad, {
+	type ILazyLoadInstance,
+	type ILazyLoadOptions,
+} from "vanilla-lazyload";
 
 declare global {
 	export interface Window {
 		lazyLoadOptions: ILazyLoadOptions;
+		iLazyLoad: ILazyLoadInstance;
 	}
 }
 
@@ -25,11 +29,16 @@ export function initLazyLoad(
 	};
 
 	// Initializing vanilla-lazyload
-	if (typeof window !== "undefined" && "IntersectionObserver" in window) {
-		const vll = new LazyLoad();
+	if (
+		typeof window !== "undefined" &&
+		"IntersectionObserver" in window &&
+		!("iLazyLoad" in window)
+	) {
+		const vanillaLazyLoad = new LazyLoad() as ILazyLoadInstance;
+		Object(window).assign(window, { iLazyLoad: vanillaLazyLoad });
 
 		// Destroying vanilla-lazyload when component unmounts
-		return () => vll.destroy();
+		return () => vanillaLazyLoad.destroy();
 	}
 }
 
