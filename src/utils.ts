@@ -4,7 +4,7 @@ import LazyLoad, {
 } from "vanilla-lazyload";
 
 declare global {
-	export interface Window {
+	interface Window {
 		lazyLoadOptions: ILazyLoadOptions;
 		iLazyLoad: ILazyLoadInstance;
 	}
@@ -35,7 +35,9 @@ export function initLazyLoad(
 		!("iLazyLoad" in window)
 	) {
 		const vanillaLazyLoad = new LazyLoad() as ILazyLoadInstance;
-		Object(window).assign(window, { iLazyLoad: vanillaLazyLoad });
+
+		// add the iLazyLoad property to the window object
+		(window as Window).iLazyLoad = vanillaLazyLoad;
 
 		// Destroying vanilla-lazyload when component unmounts
 		return () => vanillaLazyLoad.destroy();
