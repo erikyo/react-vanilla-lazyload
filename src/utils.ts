@@ -29,15 +29,8 @@ export function initLazyLoad(
 	};
 
 	// Initializing vanilla-lazyload
-	if (
-		typeof window !== "undefined" &&
-		"IntersectionObserver" in window &&
-		!("iLazyLoad" in window)
-	) {
+	if (typeof window !== "undefined" && "IntersectionObserver" in window) {
 		const vanillaLazyLoad = new LazyLoad() as ILazyLoadInstance;
-
-		// add the iLazyLoad property to the window object
-		(window as Window).iLazyLoad = vanillaLazyLoad;
 
 		// Destroying vanilla-lazyload when component unmounts
 		return () => vanillaLazyLoad.destroy();
