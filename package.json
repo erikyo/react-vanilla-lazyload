@@ -1,6 +1,6 @@
 {
 	"name": "react-vanilla-lazyload",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "React lazy loading component using vanilla-lazyload library. Speedy, lightweight and easy to use.",
 	"author": "Erik Golinelli <https://github.com/erikyo>",
 	"repository": {
@@ -30,7 +30,8 @@
 		"test": "vitest --coverage",
 		"test:ui": "vitest --ui",
 		"test:watch": "vitest --watch",
-		"lint": "npx @biomejs/biome check --apply src tests"
+		"lint": "npx @biomejs/biome check --apply src tests",
+		"prepublish": "npm run build"
 	},
 	"main": "lib/index.js",
 	"module": "lib/index.js",
